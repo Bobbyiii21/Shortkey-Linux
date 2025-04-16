@@ -1,0 +1,151 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\title{ShortKey: The Ultimate Keyboard Shortcut Trainer}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+ShortKey is an innovative Python application designed to help users learn and master keyboard shortcuts through real-time monitoring and feedback. The application intercepts keyboard input while allowing normal keyboard usage, providing an interactive learning experience directly in the terminal.
+
+\section{Discovery Project Idea}
+The initial concept for ShortKey emerged from observing the inefficiency of using the mouse to navigate the desktop. The pitch focused on creating a real-time learning device that would:
+\begin{itemize}
+    \item Provide immediate feedback on keyboard shortcut usage
+    \item Help users discover new shortcuts they might not know
+    \item Create a more interactive learning experience than traditional documentation
+    \item Support both system-wide and application-specific shortcuts
+\end{itemize}
+
+\section{Project Progress}
+The project evolved through several key phases:
+\subsection{Initial Brainstorming}
+Originally, I had planned for ShortKey to be a device that would emulate a keyboard. However, after some research and testing, I realized that it would be too difficult to emulate a keyboard with the Raspberry Pi Model 5. As an alternative, I decided to make a software based solution that would suggest shortcuts to the user in their terminal.
+\subsection{Initial Development}
+Once I had the idea for the project, I began to work on the code. I began to research how to intercept keyboard input in Linux. I found a python library called evdev that would allow me to intercept keyboard input without removing it from the host system. In order to make the data recieved from evdev useful, I emplemented a hashmap/dictionary to map the keyboard input to plain text in order to search the shortcut file I had planned on creating.
+
+\subsection{Shortcut File}
+To make the shortcut file, I tasked Claude to make a JSON file that would contain an exhaustive list of keyboard shortcuts for Windows/Linux. Once made, I added the JSON file to the project and began to work on the code to make the program functional.
+
+\subsection{Debugging}
+When I first started the program and began to test it, I noticed that the program was not recieving any input from my keyboard. After some debugging, I realized that my keyboard was special and was showing up as three different devices. In order to fix this, I had to add a check to the program to use the event0 device instead of whichever device was presented to the program first.
+
+\subsection{Adding Functionality}
+After this was fixed, I began to work on the code to make the program functional. I added a function that would check if a key was pressed and then check if any of the shortcuts in the JSON file matched the key pressed. If matches were found, the program would suggest shortcuts to the user. If a valid shortcut was completed, the program would notify the user and describe the shortcut's function.
+
+\subsection{Refinement}
+I then added support for Chrome shortcuts and a browser mode that would allow the user to use the shortcuts in their web browser. With this, I implemented a 'layer' system that would allow the user to toggle browser mode on and off.
+
+
+\subsection{Initial Product}
+\begin{itemize}
+    \item Basic keyboard input monitoring using evdev
+    \item Simple shortcut recognition system
+    \item Terminal-based interface implementation
+\end{itemize}
+
+
+\subsection{Future Development}
+\begin{itemize}
+    \item Optimization of shortcut recognition algorithms
+    \item Enhancement of user feedback mechanisms
+    \item Documentation and code organization improvements
+\end{itemize}
+
+\section{Project Successes and Failures}
+
+\subsection{Successes}
+\begin{itemize}
+    \item Successful implementation of real-time keyboard monitoring
+    \item Creation of a flexible shortcut configuration system
+    \item Development of an intuitive browser mode
+    \item Effective prediction system for shortcut suggestions
+\end{itemize}
+
+\subsection{Failures}
+\begin{itemize}
+    \item The program was not able to send outbound HID signals to another machine.
+\end{itemize}
+
+\section{ECE Skills Gained}
+Through the development of ShortKey, several key ECE skills were developed and enhanced:
+
+\subsection{Technical Skills}
+\begin{itemize}
+    \item System-level programming with Python
+    \item SSH protocol
+    \item Using Efficient Data Structures to improve program performance
+    \item Input device handling and event processing
+    \item Modular software design
+    \item Debugging complex input handling scenarios
+    \item HID signal processing
+\end{itemize}
+
+\section{Key Features}
+The application includes several notable features:
+\begin{itemize}
+    \item Real-time keyboard input interception
+    \item Configurable shortcuts through JSON
+    \item Special browser control mode (activated by Ctrl+Win+Alt)
+    \item Real-time shortcut prediction and suggestions
+    \item Terminal-based interface
+\end{itemize}
+
+\section{Technical Implementation}
+The application is built using Python 3.x and leverages several key components:
+
+\subsection{Core Components}
+\begin{itemize}
+    \item \texttt{evdev} for keyboard input handling
+    \item JSON configuration for shortcut definitions
+    \item Modular design with separate shortcut recognition and prediction systems
+\end{itemize}
+
+\subsection{Architecture}
+The application follows a modular architecture with:
+\begin{itemize}
+    \item Keyboard input monitoring
+    \item Shortcut recognition system
+    \item Browser mode management
+    \item Real-time prediction engine
+\end{itemize}
+
+\section{JSON Configuration}
+Shortcuts are defined in a JSON file (\texttt{KeyboardShortcut.json}) with two main categories:
+\begin{itemize}
+    \item System shortcuts
+    \item Browser-specific shortcuts
+\end{itemize}
+
+Each shortcut includes:
+\begin{itemize}
+    \item Description
+    \item Action type
+    \item Specific action
+\end{itemize}
+
+\section{Usage}
+To use ShortKey:
+\begin{enumerate}
+    \item Install dependencies: \texttt{pip install evdev}
+    \item Make the script executable: \texttt{chmod +x ShortKey.py}
+    \item Run the application: \texttt{./ShortKey.py}
+\end{enumerate}
+
+\section{Compatibility}
+The application has been tested on:
+\begin{itemize}
+    \item Raspberry Pi 5
+    \item Python 3.x
+    \item Required packages: evdev, logging, json
+\end{itemize}
+
+\end{document}
