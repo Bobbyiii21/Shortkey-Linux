@@ -326,27 +326,22 @@ def main():
             if event.type == evdev.ecodes.EV_KEY:
                 key_event = categorize(event)
                 key_name = get_key_name(key_event.scancode)
-                state = "pressed" if key_event.keystate == 1 else "released" if key_event.keystate == 0 else "repeated"
                 
-                # Print key event
-                if key_event.keystate != 2:
-                    print(f"Key: {key_name} ({state})")
-                    
-                    # Show predictions when a key is pressed
-                    if key_event.keystate == 1:
-                        # Update modifiers first
-                        if shortcut_recognizer.is_modifier(key_name):
-                            shortcut_recognizer.update_modifiers(key_name, key_event.keystate)
-                            
-                        predictions = shortcut_recognizer.predict_shortcuts()
-                        if predictions:
-                            print("\nPossible shortcuts:")
-                            for shortcut, description in predictions:
-                                print(f"  {shortcut}: {description}")
-                            print("------------------------------")
-                        elif shortcut_recognizer.is_modifier(key_name):
-                            print("\nNo shortcuts available with this modifier combination")
-                            print("------------------------------")
+                # Show predictions when a key is pressed
+                if key_event.keystate == 1:
+                    # Update modifiers first
+                    if shortcut_recognizer.is_modifier(key_name):
+                        shortcut_recognizer.update_modifiers(key_name, key_event.keystate)
+                        
+                    predictions = shortcut_recognizer.predict_shortcuts()
+                    if predictions:
+                        print("\nPossible shortcuts:")
+                        for shortcut, description in predictions:
+                            print(f"  {shortcut}: {description}")
+                        print("------------------------------")
+                    elif shortcut_recognizer.is_modifier(key_name):
+                        print("\nNo shortcuts available with this modifier combination")
+                        print("------------------------------")
                 
                 # Check for shortcuts
                 shortcut_name, description, action = shortcut_recognizer.recognize_shortcut(key_name, key_event.keystate)
