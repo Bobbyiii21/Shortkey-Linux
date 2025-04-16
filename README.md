@@ -22,3 +22,31 @@ ShortKey is a simple Python application that intercepts keyboard input and allow
   - evdev
   - logging
   - json
+
+## Setup
+
+### 1. Install dependencies:
+
+```bash
+pip install evdev
+```
+
+### 2. Make the script executable:
+
+```bash
+chmod +x ShortKey.py
+```
+
+### 3. Run the script:
+
+```bash
+./ShortKey.py
+```
+
+And you're done!
+
+## Images
+
+![Image 1](./images/image1.png)
+
+
