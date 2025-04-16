@@ -1,0 +1,443 @@
+{
+"System": {
+    "Ctrl": {
+        "C": {
+            "description": "Copy",
+            "action": "copy",
+            "action_type": "clipboard"
+        },
+        "V": {
+            "description": "Paste",
+            "action": "paste",
+            "action_type": "clipboard"
+        },
+        "X": {
+            "description": "Cut selected text",
+            "action_type": "clipboard",
+            "action": "cut"
+        },
+        "Z": {
+            "description": "Undo last action",
+            "action_type": "undo",
+            "action": "undo"
+        },
+        "Shift": {
+            "Z": {
+                "description": "Redo last action",
+                "action_type": "undo",
+                "action": "redo"
+            }
+        },
+        "A": {
+            "description": "Select all",
+            "action_type": "selection",
+            "action": "select_all"
+        },
+        "S": {
+            "description": "Save current file",
+            "action_type": "file",
+            "action": "save"
+        },
+        "Alt": {
+            "Tab": {
+                "description": "Switch Window",
+                "action": "switch_window",
+                "action_type": "window"
+            },
+            "Delete": {
+                "description": "Windows Security Settings",
+                "action_type": "system",
+                "action": "security_settings"
+            }
+        },
+        "F": {
+            "description": "Find in document",
+            "action_type": "search",
+            "action": "find"
+        },
+        "H": {
+            "description": "Replace text",
+            "action_type": "search",
+            "action": "replace"
+        },
+        "P": {
+            "description": "Print",
+            "action_type": "file",
+            "action": "print"
+        },
+        "N": {
+            "description": "New window/document",
+            "action_type": "file",
+            "action": "new"
+        },
+        "O": {
+            "description": "Open file",
+            "action_type": "file",
+            "action": "open"
+        },
+        "W": {
+            "description": "Close current window/tab",
+            "action_type": "window",
+            "action": "close"
+        },
+        "F4": {
+            "description": "Close current window",
+            "action_type": "window",
+            "action": "close"
+        },
+        "Tab": {
+            "description": "Switch between tabs",
+            "action_type": "window",
+            "action": "switch_tab"
+        }
+    },
+    "Alt": {
+        "Tab": {
+            "description": "Switch between windows",
+            "action_type": "window",
+            "action": "switch"
+        },
+        "F4": {
+            "description": "Close current window",
+            "action_type": "window",
+            "action": "close"
+        },
+        "Space": {
+            "description": "Open window menu",
+            "action_type": "window",
+            "action": "window_menu"
+        },
+        "Enter": {
+            "description": "Open properties",
+            "action_type": "file",
+            "action": "properties"
+        },
+        "Left": {
+            "description": "Go back",
+            "action_type": "navigation",
+            "action": "back"
+        },
+        "Right": {
+            "description": "Go forward",
+            "action_type": "navigation",
+            "action": "forward"
+        }
+    },
+    "Win": {
+        "D": {
+            "description": "Show desktop",
+            "action_type": "window",
+            "action": "show_desktop"
+        },
+        "L": {
+            "description": "Lock computer",
+            "action_type": "system",
+            "action": "lock"
+        },
+        "E": {
+            "description": "Open File Explorer",
+            "action": "explorer",
+            "action_type": "launch"
+        },
+        "R": {
+            "description": "Open Run dialog",
+            "action_type": "system",
+            "action": "run"
+        },
+        "I": {
+            "description": "Open Settings",
+            "action_type": "system",
+            "action": "settings"
+        },
+        "A": {
+            "description": "Open Action Center",
+            "action_type": "system",
+            "action": "action_center"
+        },
+        "X": {
+            "description": "Open Quick Link menu",
+            "action_type": "system",
+            "action": "quick_link"
+        },
+        "Pause": {
+            "description": "Open System Properties",
+            "action_type": "system",
+            "action": "system_properties"
+        },
+        "Shift": {
+            "S": {
+                "description": "Take screenshot with Snip & Sketch",
+                "action_type": "screenshot",
+                "action": "snip_sketch"
+            }
+        },
+        "Tab": {
+            "description": "Open Task View",
+            "action_type": "window",
+            "action": "task_view"
+        },
+        "Number": {
+            "description": "Open app from taskbar",
+            "action_type": "launch",
+            "action": "taskbar_app"
+        }
+    },
+    "Shift": {
+        "Ctrl": {
+            "Esc": {
+                "description": "Open Task Manager",
+                "action_type": "system",
+                "action": "task_manager"
+            }
+        },
+        "Delete": {
+            "description": "Permanently delete file",
+            "action_type": "file",
+            "action": "permanent_delete"
+        },
+        "F10": {
+            "description": "Show context menu",
+            "action_type": "menu",
+            "action": "context_menu"
+        }
+    },
+    "F1": {
+        "description": "Open Help",
+        "action_type": "help",
+        "action": "help"
+    },
+    "F2": {
+        "description": "Rename selected item",
+        "action_type": "file",
+        "action": "rename"
+    },
+    "F3": {
+        "description": "Search for a file or folder",
+        "action_type": "search",
+        "action": "search"
+    },
+    "F4": {
+        "description": "Display address bar list",
+        "action_type": "navigation",
+        "action": "address_bar"
+    },
+    "F5": {
+        "description": "Refresh active window",
+        "action_type": "window",
+        "action": "refresh"
+    },
+    "F6": {
+        "description": "Cycle through screen elements",
+        "action_type": "navigation",
+        "action": "cycle_elements"
+    },
+    "F10": {
+        "description": "Activate menu bar",
+        "action_type": "menu",
+        "action": "activate_menu"
+    },
+    "F11": {
+        "description": "Toggle full screen",
+        "action_type": "window",
+        "action": "fullscreen"
+    }
+},
+    "Browser": {
+        "Ctrl": {
+            "T": {
+                "description": "New tab",
+                "action": "chrome_new_tab"
+            },
+            "W": {
+                "description": "Close tab",
+                "action": "chrome_close_tab"
+            },
+            "Tab": {
+                "description": "Next tab",
+                "action": "chrome_next_tab"
+            },
+            "Shift": {
+                "Tab": {
+                    "description": "Previous tab",
+                    "action": "chrome_previous_tab"
+                },
+                "T": {
+                    "description": "Reopen closed tab",
+                    "action": "chrome_reopen_tab"
+                },
+                "N": {
+                    "description": "Open new incognito window",
+                    "action": "chrome_incognito"
+                },
+                "Delete": {
+                    "description": "Clear browsing data",
+                    "action": "chrome_clear_data"
+                },
+                "E": {
+                    "description": "Open extensions page",
+                    "action": "chrome_extensions"
+                },
+                "A": {
+                    "description": "Open apps page",
+                    "action": "chrome_apps"
+                },
+                "U": {
+                    "description": "View page source (alternate)",
+                    "action": "chrome_view_source_alt"
+                },
+                "K": {
+                    "description": "Open JavaScript console",
+                    "action": "chrome_js_console"
+                },
+                "C": {
+                    "description": "Inspect element",
+                    "action": "chrome_inspect"
+                },
+                "R": {
+                    "description": "Hard reload page",
+                    "action": "chrome_hard_reload"
+                },
+                "F": {
+                    "description": "Toggle fullscreen mode",
+                    "action": "chrome_fullscreen"
+                },
+                "G": {
+                    "description": "Find previous match",
+                    "action": "chrome_find_previous"
+                },
+                "Z": {
+                    "description": "Open task manager",
+                    "action": "chrome_task_manager"
+                },
+                "Y": {
+                    "description": "Open downloads in new tab",
+                    "action": "chrome_downloads_new_tab"
+                },
+                "X": {
+                    "description": "Open extensions in new tab",
+                    "action": "chrome_extensions_new_tab"
+                },
+                "V": {
+                    "description": "Paste as plain text",
+                    "action": "chrome_paste_plain"
+                },
+                "Home": {
+                    "description": "Scroll to top of page",
+                    "action": "chrome_scroll_top"
+                },
+                "End": {
+                    "description": "Scroll to bottom of page",
+                    "action": "chrome_scroll_bottom"
+                },
+                "PageUp": {
+                    "description": "Move tab left",
+                    "action": "chrome_move_tab_left"
+                },
+                "PageDown": {
+                    "description": "Move tab right",
+                    "action": "chrome_move_tab_right"
+                },
+                "Space": {
+                    "description": "Previous input method",
+                    "action": "chrome_prev_input_method"
+                },
+                "Backspace": {
+                    "description": "Go to previous page in history",
+                    "action": "chrome_prev_history"
+                },
+                "Enter": {
+                    "description": "Open link in new tab and switch to it",
+                    "action": "chrome_open_link_new_tab_switch"
+                },
+                "0": {
+                    "description": "Reset page scale",
+                    "action": "chrome_reset_scale"
+                },
+                "Plus": {
+                    "description": "Increase page scale",
+                    "action": "chrome_increase_scale"
+                },
+                "Minus": {
+                    "description": "Decrease page scale",
+                    "action": "chrome_decrease_scale"
+                }
+            },
+            "G": {
+                "description": "Find next match",
+                "action": "chrome_find_next"
+            },
+            "Space": {
+                "description": "Next input method",
+                "action": "chrome_next_input_method"
+            },
+            "0": {
+                "description": "Reset zoom level",
+                "action": "chrome_reset_zoom"
+            },
+            "Plus": {
+                "description": "Zoom in",
+                "action": "chrome_zoom_in"
+            },
+            "Minus": {
+                "description": "Zoom out",
+                "action": "chrome_zoom_out"
+            },
+            "R": {
+                "description": "Reload page",
+                "action": "chrome_reload"
+            },
+            "L": {
+                "description": "Focus address bar",
+                "action": "chrome_focus_address"
+            },
+            "F": {
+                "description": "Find in page",
+                "action": "chrome_find"
+            },
+            "Esc": {
+                "description": "Exit browser mode",
+                "action": "exit_browser_mode"
+            },
+            "H": {
+                "description": "Open history",
+                "action": "chrome_history"
+            },
+            "J": {
+                "description": "Open downloads",
+                "action": "chrome_downloads"
+            },
+            "U": {
+                "description": "View page source",
+                "action": "chrome_view_source"
+            },
+            "D": {
+                "description": "Bookmark current page",
+                "action": "chrome_bookmark"
+            },
+            "O": {
+                "description": "Open file",
+                "action": "chrome_open_file"
+            },
+            "P": {
+                "description": "Print current page",
+                "action": "chrome_print"
+            },
+            "S": {
+                "description": "Save current page",
+                "action": "chrome_save_page"
+            },
+            "N": {
+                "description": "Open new window",
+                "action": "chrome_new_window"
+            },
+            "M": {
+                "description": "Sign in as different user",
+                "action": "chrome_switch_user"
+            },
+            "Q": {
+                "description": "Exit Chrome",
+                "action": "chrome_exit"
+            }
+        }
+    }
+} 
